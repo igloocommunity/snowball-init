@@ -4,14 +4,6 @@
 #
 #
 
-# (Limited) OTG HOST support
-start_musb() {
-    modprobe g_multi
-}
-stop_musb() {
-    modprobe -r g_multi
-}
-
 # Bluetooth
 start_bluetooth() {
     hciattach -a 23 -s 115200 /dev/ttyAMA0 cg2900 115200 flow
@@ -45,22 +37,18 @@ fi
 
 case "$1" in
 start)
-    start_musb
     start_bluetooth
     start_wlan
     ;;
 
 stop)
-    stop_musb
     stop_bluetooth
     stop_wlan
     ;;
 force-reload|restart)
-    stop_musb
     stop_bluetooth
     stop_wlan
     sleep 5
-    start_musb
     start_bluetooth
     start_wlan
     ;;
