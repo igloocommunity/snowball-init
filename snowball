@@ -33,10 +33,9 @@ stop_bluetooth() {
 start_wlan() {
     if [ "$WLAN_MAC" ]
     then
-        modprobe cw1200_wlan macaddr=$WLAN_MAC
-    else
-        modprobe cw1200_wlan
+        modprobe cw1200_core macaddr=$WLAN_MAC
     fi
+    modprobe cw1200_wlan
 }
 stop_wlan() {
     modprobe -r cw1200_wlan
