@@ -35,20 +35,8 @@ stop_wlan() {
     modprobe -r cw1200_wlan
 }
 
-# AV8100 output mode
-# 0 = HDMI (default)
-# 1 = CVBS
-# 2 = DVI-D 
-set_av8100_mode() {
-    if [ "$AV8100_MODE" ]
-    then
-        echo $AV8100_MODE > /sys/devices/av8100_hdmi.3/hdmisdtvswitch
-    fi
-}
-
 # Configuration options:
 #  - a line with 'WLAN_MAC=0x00,0x80,0xe1,0xb6,0xaf,0xed' sets WLAN MAC
-#  - a line with 'AV8100_MODE=N' selects AV8100 mode
 if [ -e /etc/snowballrc ]
 then
     . /etc/snowballrc
@@ -60,7 +48,6 @@ start)
     start_musb
     start_bluetooth
     start_wlan
-    set_av8100_mode
     ;;
 
 stop)
@@ -76,7 +63,6 @@ force-reload|restart)
     start_musb
     start_bluetooth
     start_wlan
-    set_av8100_mode
     ;;
 *)
     echo "Usage: $0 {start|stop|restart}"
@@ -84,4 +70,3 @@ force-reload|restart)
 esac
 
 exit 0
-

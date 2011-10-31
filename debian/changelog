@@ -1,3 +1,9 @@
+snowball-init (1.2-0) unstable; urgency=low
+
+  * Drop AV8100 hack in favour of hdmiservice
+
+ -- Kalle Vahlman <kalle.vahlman@movial.com>  Mon, 31 Oct 2011 08:04:16 +0200
+
 snowball-init (1.0.1-1) unstable; urgency=low
 
   * Add support for Oneiric (with lightdm) rootfs
