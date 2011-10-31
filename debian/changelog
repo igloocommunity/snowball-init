@@ -1,3 +1,9 @@
+snowball-init (1.0.1-1) unstable; urgency=low
+
+  * Add support for Oneiric (with lightdm) rootfs
+
+ -- Kalle Vahlman <kalle.vahlman@movial.com>  Fri, 28 Oct 2011 14:36:14 +0300
+
 snowball-init (1.0-1) unstable; urgency=low
 
   * Initial release
