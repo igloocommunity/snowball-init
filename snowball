@@ -7,16 +7,13 @@
 # (Limited) OTG HOST support
 USB_BTD=/sys/devices/platform/ab8500-i2c.0/ab8500-usb.0/boot_time_device
 start_musb() {
-    modprobe g_multi
     if [ -f $USB_BTD ]; then
          echo 1 > $USB_BTD
     fi
+    modprobe g_multi
 }
 stop_musb() {
     modprobe -r g_multi
-    if [ -f $USB_BTD ]; then
-         echo 0 > $USB_BTD
-    fi
 }
 
 # Bluetooth
