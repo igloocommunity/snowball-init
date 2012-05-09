@@ -1,3 +1,9 @@
+snowball-init (1.4.1-0) precise; urgency=low
+
+  * Fix initialization order of USB things
+
+ -- Kalle Vahlman <kalle.vahlman@movial.com>  Wed, 09 May 2012 08:48:19 +0000
+
 snowball-init (1.4-0) precise; urgency=low
 
   * Fix dependencies
