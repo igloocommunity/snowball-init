@@ -1,0 +1,14 @@
+[Unit]
+Description=ST-Ericsson Snowball init
+Documentation=http://www.igloocommunity.org/support/Snowball-Init
+Before=basic.target
+Before=network.target
+Before=bluetooth.target
+
+[Service]
+ExecStart=/etc/init.d/snowball start
+ExecReload=/etc/init.d/snowball restart
+ExecStop=/etc/init.d/snowball stop
+
+[Install]
+WantedBy=default.target
